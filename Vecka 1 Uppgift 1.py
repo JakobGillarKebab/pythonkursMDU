@@ -6,24 +6,24 @@ print('--------------------')
 
 # collect info
 print('How many students want:')
-två_vanliga_korvar = float(input('Two ordinary hotdogs? '))
-tre_vanliga_korvar = float(input('Three regular hotdogs? '))
-två_veganska_korvar = float(input('Two vegan hotdogs? '))
-tre_veganska_korvar = float(input('Three vegan hotdogs? '))
+two_regular_hotdogs = int(input('Two ordinary hotdogs? '))
+three_regular_hotdogs = int(input('Three regular hotdogs? '))
+two_vegan_hotdogs = int(input('Two vegan hotdogs? '))
+three_vegan_hotdogs = int(input('Three vegan hotdogs? '))
 
 # calculate prices
-antal_vanliga_korvpaket = math.ceil((två_vanliga_korvar * 2 + tre_vanliga_korvar * 3)/8)
-antal_veganska_korvpaket = math.ceil((två_veganska_korvar * 2 + tre_veganska_korvar * 3)/4)
-pris_vanliga_korvar = round(antal_vanliga_korvpaket * 20.95)
-pris_veganska_korvar = round(antal_veganska_korvpaket * 34.95)
-antal_drickor = två_vanliga_korvar + tre_vanliga_korvar + två_veganska_korvar + tre_veganska_korvar
-pris_drickor = round(antal_drickor * 13.95, 2)
-total_kostnad = pris_vanliga_korvar + pris_veganska_korvar + pris_drickor
+quantity_regular_hotdogpacks = math.ceil((two_regular_hotdogs * 2 + three_regular_hotdogs * 3)/8)
+quantity_vegan_hotdogpacks = math.ceil((two_vegan_hotdogs * 2 + three_vegan_hotdogs * 3)/4)
+price_regular_hotdogs = round(quantity_regular_hotdogpacks * 20.95, 2)
+price_vegan_hotdogs = round(quantity_vegan_hotdogpacks * 34.95, 2)
+quantity_drinks = two_regular_hotdogs + three_regular_hotdogs + two_vegan_hotdogs + three_vegan_hotdogs
+price_drinks = round(quantity_drinks * 13.95, 2)
+total_cost = round(price_regular_hotdogs + price_vegan_hotdogs + price_drinks, 2)
 
 # print results
 print('---------------------')
-print(antal_vanliga_korvpaket,'packs of regular hotdogs cost', pris_vanliga_korvar,'kr')
-print(antal_veganska_korvpaket, 'packs of vegan hotdogs cost', pris_veganska_korvar,'kr')
-print(int(antal_drickor), 'drink/drinks cost', pris_drickor,'kr')
+print(quantity_regular_hotdogpacks,'packs of regular hotdogs cost', price_regular_hotdogs,'kr')
+print(quantity_vegan_hotdogpacks, 'packs of vegan hotdogs cost', price_vegan_hotdogs,'kr')
+print(int(quantity_drinks), 'drink/drinks cost', price_drinks,'kr')
 print('---------------------')
-print('Total cost is:', total_kostnad,'kr')
+print('Total cost is:', total_cost,'kr')
