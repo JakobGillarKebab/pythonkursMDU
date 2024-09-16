@@ -8,15 +8,18 @@ while True:
     if svar == 'exit':
         break
     try:
-        svar = int(svar)
+        svar = float(svar)
         answers += 1
         total += svar
     except ValueError:
         print('Invalid number!')
         continue
 
-mean_value = total/answers
-print('--------------')
-print('Cardinaliy:', answers)
-print('Sum:', total)
-print('Mean Value:', mean_value)
+try:
+    mean_value = total/answers
+    print('--------------')
+    print('Cardinaliy:', answers)
+    print('Sum:', total)
+    print('Mean Value:', mean_value)
+except ZeroDivisionError:
+    print('No Valid input')
